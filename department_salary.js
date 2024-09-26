@@ -1,4 +1,4 @@
-//Initialize company structure with departments and employees
+//Task 1: Initialize company structure with departments and employees
 const company = {
     departments: [
         {departmentName: 'Engineering',
@@ -31,3 +31,34 @@ const company = {
                 subordinates: []
           }]
         } ]};
+
+//Task 2: Create recursive function to calculate department salary
+function calculateDepartmentSalary(employee){
+    let totalSalary = employee.salary;
+
+     for (let subordinate of employee.subordinates) {
+        totalSalary += calculateDepartmentSalary(subordinate);
+     }
+     return totalSalary;
+     
+}
+//Create function to find total by department name
+function calculateTotalDepartmentSalary (departmentName){
+    let totalDepartmentSalary = 0;
+
+company.departments.forEach(department=>
+    {if(department.departmentName===departmentName){
+department.employees.forEach(employee => {totalDepartmentSalary += calculateDepartmentSalary(employee)
+
+});
+    }});
+
+return totalDepartmentSalary;
+}
+    
+const engineeringSalary = calculateTotalDepartmentSalary('Engineering')
+const salesSalary = calculateTotalDepartmentSalary('Sales')
+console.log(`
+Total Salary of Each Department:
+Engineering: ${engineeringSalary}
+Sales: ${salesSalary}`)
