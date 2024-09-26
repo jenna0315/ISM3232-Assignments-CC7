@@ -31,6 +31,24 @@ const company = {
                 subordinates: []
           }]
         } ]};
+        
+//Practiced Using ForEach Method to Display a Visually Pleasing Summary of Company Data:)
+company.departments.forEach(department=>{console.log(`
+${department.departmentName} Department:`);
+
+    department.employees.forEach(employee=>{console.log(`
+Employee Name: ${employee.name}
+    Salary: $${employee.salary}`);
+
+employee.subordinates.forEach(subordinate=>{console.log(`
+    Subordinates: 
+        Name:${subordinate.name}
+        Salary:$${subordinate.salary}`);
+
+subordinate.subordinates.forEach(subordinate=>{console.log(`
+        Subordinates:
+            Name: ${subordinate.name}
+            Salary:$${subordinate.salary}`)})})})});
 
 //Task 2: Create recursive function to calculate department salary
 function calculateDepartmentSalary(employee){
