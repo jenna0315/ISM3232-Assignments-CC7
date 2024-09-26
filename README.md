@@ -1,1 +1,2 @@
 # ISM3232-Assignments-CC7
+Stores information about each department, including its name, employees, and their respective subordinates. Allows calculation of the total salary for a department, including the salaries of all employees and their subordinates within that department.
