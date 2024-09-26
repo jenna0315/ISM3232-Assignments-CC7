@@ -1,4 +1,5 @@
 //Task 1: Initialize company structure with departments and employees
+console.log(`Coding Challenge #7`)
 const company = {
     departments: [
         {departmentName: 'Engineering',
@@ -31,8 +32,9 @@ const company = {
                 subordinates: []
           }]
         } ]};
-        
+
 //Practiced Using ForEach Method to Display a Visually Pleasing Summary of Company Data:)
+console.log(`Company Summary:`)
 company.departments.forEach(department=>{console.log(`
 ${department.departmentName} Department:`);
 
